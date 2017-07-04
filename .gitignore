@@ -1,4 +1,4 @@
 #忽略以下文件
-.settings
-.classpath
+*.iml
+.idea/
 target/
