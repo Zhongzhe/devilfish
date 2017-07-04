@@ -1,0 +1,4 @@
+#忽略以下文件
+.settings
+.classpath
+target/
