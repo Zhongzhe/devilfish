@@ -5,7 +5,12 @@
     <title>greet</title>
 </head>
 <body>
+    <tr th:each="message : ${msgList}">
+    <td th:text="${message.id}">1</td>
+    <td><a href="#" th:text="${message.title}">Title ...</a></td>
+    <td th:text="${message.content}">Text ...</td>
+</tr>
     <p>hello,this is my first html page</p>
-    <p>test test</p>
+    <p>test test 12</p>
 </body>
 </html>

@@ -1,17 +1,16 @@
-package com.yz.devilfish;
+package com.yz.devilfish.application;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Created by kyuan on 2017/7/5.
  */
 
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan //(@Component,@Service,@Repository,@Controller注解的bean会被自动注册为spring bean)
+@SpringBootApplication
+@EnableTransactionManagement
+//(@Component,@Service,@Repository,@Controller注解的bean会被自动注册为spring bean)
 //用@SpringBootApplication代替上面三个的注解是一样的效果
 public class MainApplication {
 

@@ -1,20 +1,29 @@
 package com.yz.devilfish.web;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import com.yz.devilfish.domain.Message;
+import com.yz.devilfish.service.MessageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by kyuan on 2017/7/4.
  */
-@RestController
-@EnableAutoConfiguration
+@Controller
+@RequestMapping("/message")
 public class MessageController {
 
-    @RequestMapping("/")
-    String home(){
-        return "Hello 曾哥!!";
+    @Autowired
+    private MessageService messageService;
+
+    @RequestMapping("/all")
+    public String getAllMessage(Model model){
+        List<Message> msgList = messageService.findAllMessage();;
+        model.addAttribute("msgList",msgList);
+        return "greet";
     }
 
 }

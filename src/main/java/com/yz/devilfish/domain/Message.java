@@ -6,17 +6,22 @@ import org.springframework.stereotype.Component;
  * Created by kyuan on 2017/7/6.
  */
 public class Message {
-
+    //资讯id
+    public int id;
     //资讯标题
     public String title;
     //资讯内容
-    public String message;
+    public String content;
     //发布人
     public String publisher;
     //发布时间
     public int createDate;
     //更新时间
     public int updateDate;
+
+    public int getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
@@ -26,12 +31,16 @@ public class Message {
         this.title = title;
     }
 
-    public String getMessage() {
-        return message;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getPublisher() {
@@ -61,7 +70,7 @@ public class Message {
     @Override
     public String toString() {
         return "Message的标题:"+title+"\n"
-                +"内容:"+message+"\n"
+                +"内容:"+content+"\n"
                 +"发布人:"+publisher+"\n"
                 +"发布时间:"+createDate;
     }
