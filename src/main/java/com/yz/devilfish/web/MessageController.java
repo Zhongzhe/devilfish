@@ -26,4 +26,21 @@ public class MessageController {
         return "greet";
     }
 
+    @RequestMapping("/test")
+    public String test(){
+        return "test";
+    }
+
+    @RequestMapping("/add")
+    public String addMessage(Message msg){
+        Message msg1 = new Message();
+        msg.setTitle("测试事物是否按照异常回滚");
+        msg.setContent("test");
+        msg.setPublisher("kevin test");
+        msg.setCreateDate(1);
+        msg.setUpdateDate(2);
+        messageService.addMessage(msg);
+        return "test";
+    }
+
 }

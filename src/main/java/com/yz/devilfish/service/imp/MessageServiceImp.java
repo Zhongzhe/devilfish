@@ -21,4 +21,10 @@ public class MessageServiceImp implements MessageService{
     public List<Message> findAllMessage() {
         return messageMapper.selectAllMessage();
     }
+
+    @Override
+    public void addMessage(Message msg) {
+        messageMapper.insertMessage(msg);
+        int i = 4/0;
+    }
 }

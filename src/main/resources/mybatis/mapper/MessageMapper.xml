@@ -9,4 +9,18 @@
     <select id="selectAllMessage" resultType="Message">
         select * from message;
     </select>
+
+    <insert id="insertMessage"
+            useGeneratedKeys = "true"
+            parameterType="Message"
+            flushCache="true" >
+        insert into message(title,content,publisher,createDate,updateDate)
+        values
+        (#{title,jdbcType=VARCHAR},
+        #{content,jdbcType=VARCHAR},
+        #{publisher,jdbcType=VARCHAR},
+        #{createDate,jdbcType=NUMERIC},
+        #{updateDate,jdbcType=NUMERIC});
+
+    </insert>
 </mapper>

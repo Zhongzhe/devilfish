@@ -14,4 +14,6 @@ public interface MessageMapper {
     List<Message> selectAllMessage();
 
     Message selectMessageById(int id);
+
+    void insertMessage(Message msg);
 }
