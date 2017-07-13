@@ -45,4 +45,15 @@ public class MessageTest {
                 //.andExpect(content().string("hello world"));
 
     }
+
+    @Test
+    public void testMessageErrorHandler() throws Exception{
+//        given(this.messageService.findAllMessage())
+//                .willReturn(new ArrayList<Message>());
+//
+        this.mvc.perform(get("/message/error"))
+                .andExpect(status().is(404))
+                .andExpect(content().encoding("UTF-8"));
+
+    }
 }
